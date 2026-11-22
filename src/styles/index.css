@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-cyan: #00f2fe;
+  --neon-blue: #4facfe;
+  --neon-amber: #ffaa00;
+  --neon-red: #ff3366;
+  --neon-green: #00ff88;
+  --panel-bg: rgba(10, 16, 26, 0.82);
+  --panel-border: rgba(0, 242, 254, 0.28);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #03070d;
+  color: #e2e8f0;
+  font-family: 'Rajdhani', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+h1, h2, h3, h4, .font-orbitron {
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 0.08em;
+}
+
+.font-mono-tech {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Sci-Fi Glass Panels */
+.cyber-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.08), inset 0 0 15px rgba(0, 242, 254, 0.03);
+}
+
+.cyber-panel-amber {
+  background: rgba(20, 15, 8, 0.85);
+  border: 1px solid rgba(255, 170, 0, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(255, 170, 0, 0.1), inset 0 0 15px rgba(255, 170, 0, 0.04);
+}
+
+.cyber-panel-red {
+  background: rgba(22, 8, 12, 0.85);
+  border: 1px solid rgba(255, 51, 102, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.15);
+}
+
+/* Neon Glows */
+.glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.7), 0 0 20px rgba(0, 242, 254, 0.4);
+}
+
+.glow-amber {
+  text-shadow: 0 0 10px rgba(255, 170, 0, 0.8), 0 0 20px rgba(255, 170, 0, 0.4);
+}
+
+.glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8), 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.glow-red {
+  text-shadow: 0 0 10px rgba(255, 51, 102, 0.8), 0 0 20px rgba(255, 51, 102, 0.4);
+}
+
+/* CRT Scanlines Overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Cyber Button */
+.cyber-button {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.05) 100%);
+  border: 1px solid rgba(0, 242, 254, 0.5);
+  color: #00f2fe;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-button:hover {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.35) 0%, rgba(79, 172, 254, 0.2) 100%);
+  border-color: #00f2fe;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.5), inset 0 0 10px rgba(0, 242, 254, 0.3);
+  transform: translateY(-1px);
+}
+
+.cyber-button:active {
+  transform: translateY(1px);
+}
+
+.cyber-button-amber {
+  background: linear-gradient(135deg, rgba(255, 170, 0, 0.2) 0%, rgba(255, 120, 0, 0.05) 100%);
+  border: 1px solid rgba(255, 170, 0, 0.6);
+  color: #ffaa00;
+}
+
+.cyber-button-amber:hover {
+  background: linear-gradient(135deg, rgba(255, 170, 0, 0.4) 0%, rgba(255, 120, 0, 0.25) 100%);
+  border-color: #ffaa00;
+  box-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
+}
+
+/* Animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.98); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+@keyframes laser-sweep {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.animate-laser-sweep {
+  animation: laser-sweep 3s infinite linear;
+}
