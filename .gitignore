@@ -8,10 +8,10 @@ dist-ssr/
 # Vercel deployment artifacts
 .vercel/
 
-# Environment files
+# Environment files (exclude all secrets, keep example template)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
 # Logs
 npm-debug.log*
