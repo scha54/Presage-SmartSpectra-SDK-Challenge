@@ -1,0 +1,18 @@
+{
+  "test_id": "3d9d99d2-4410-4535-9ffa-c5ef667d8554",
+  "project_id": "01M89Z0GYBYBGE6HJJ87EEV5SA",
+  "folder_id": "01M89Z0W9KMHST71AZ47NEXW5R",
+  "org_id": "3452428",
+  "session_name": "05_biometric_laser_gate_disarm",
+  "commit_id": "9e0b915a-c38a-4eff-ba2c-d5a740568d64",
+  "testcase_id": "01M8A1X3WM6JZ7FW8HYTF4ZJDS",
+  "executions": [
+    {
+      "execution_id": "6c8a2e93-79a7-4280-8956-73e1cf9ceda9",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-11-25T19:19:34.620Z"
+    }
+  ]
+}

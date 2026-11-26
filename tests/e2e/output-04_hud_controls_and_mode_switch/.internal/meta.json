@@ -1,0 +1,18 @@
+{
+  "test_id": "bcdda333-fe0a-4874-b25c-9c49cd99bc7f",
+  "project_id": "01M89Z0GYBYBGE6HJJ87EEV5SA",
+  "folder_id": "01M89Z0W9KMHST71AZ47NEXW5R",
+  "org_id": "3452428",
+  "session_name": "04_hud_controls_and_mode_switch",
+  "commit_id": "ba50097a-1e50-4cde-905a-712eefffcf42",
+  "testcase_id": "01M8A1QRH9H4ZFHN5TVGWRCVY5",
+  "executions": [
+    {
+      "execution_id": "8149b45a-d987-48eb-8544-b300ca5fe6e3",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-11-25T19:10:57.434Z"
+    }
+  ]
+}

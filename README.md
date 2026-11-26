@@ -141,3 +141,36 @@ This ensures that the browser grants full optical access to the webcam for real-
   - `DEMO MODE` (Amber) – Manual simulator with keyboard & slider overrides.
 - **Bypass / Fast-Forward Button:** Click the `BYPASS CURRENT PUZZLE (TEST)` button to quickly demonstrate puzzle progression, door animations, and victory screens during brief 2-minute presentations.
 - **Camera PIP:** Toggle the floating picture-in-picture camera preview at any time to inspect facial alignment and signal confidence.
+
+---
+
+## ✅ End-to-End Testing (Kane CLI)
+
+Automated browser E2E tests are authored as Markdown test specifications under [`tests/e2e/`](tests/e2e/) and executed against the local Vite app (`http://localhost:5173`) using **Kane CLI** (`kane-cli` v0.10.9, headless Chrome).
+
+### Running the E2E Suite
+
+1. Start the frontend dev server:
+   ```bash
+   npm run dev
+   ```
+2. Run the full suite sequentially (`--parallel 1` avoids local browser port collisions and software WebGL contention):
+   ```bash
+   kane-cli testrun run --tags e2e --headless --parallel 1 --name heartbeat-heist-e2e --agent
+   ```
+   Or run an individual test file:
+   ```bash
+   kane-cli testmd run tests/e2e/01_title_and_demo_entry_test.md --headless --agent
+   ```
+
+### Recorded Test Results (5 / 5 Passed)
+
+| # | Test Case | Spec | Status | Duration |
+|---|---|---|---|---|
+| 1 | Title Screen and Demo Mode Entry | [`01_title_and_demo_entry_test.md`](tests/e2e/01_title_and_demo_entry_test.md) | **PASSED** (3/3 steps) | 266s |
+| 2 | Calibration Modal and Demo Fallback Flow | [`02_calibration_modal_fallback_test.md`](tests/e2e/02_calibration_modal_fallback_test.md) | **PASSED** (2/2 steps) | 114s |
+| 3 | Full 3-Room Heist Walkthrough and Replay Reset | [`03_full_heist_walkthrough_and_replay_test.md`](tests/e2e/03_full_heist_walkthrough_and_replay_test.md) | **PASSED** (2/2 steps) | 153s |
+| 4 | HUD Controls and Sensor Mode Switching | [`04_hud_controls_and_mode_switch_test.md`](tests/e2e/04_hud_controls_and_mode_switch_test.md) | **PASSED** (2/2 steps) | 153s |
+| 5 | Biometric Laser Corridor Progression via Simulated Vitals | [`05_biometric_laser_gate_disarm_test.md`](tests/e2e/05_biometric_laser_gate_disarm_test.md) | **PASSED** (1/1 step) | 494s |
+
+See [`tests/e2e/E2E_TEST_RESULTS.md`](tests/e2e/E2E_TEST_RESULTS.md) for step-by-step verification details, session IDs, Test Manager references, and local evidence pack commands.
